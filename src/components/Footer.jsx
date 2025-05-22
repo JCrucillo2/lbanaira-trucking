@@ -11,13 +11,13 @@ const Footer = () => {
 
 			<div className="flex flex-col gap-4 my-4">
 				{Links.map((link) => (
-					<NavLink key={link.id} className="text-xl hover:underline" to={link.to}>
+					<NavLink key={link.id} className="hover:underline" to={link.to}>
 						{link.name}
 					</NavLink>
 				))}
 			</div>
 
-			<p className="text-sm">&copy;{new Date().getFullYear()} LBanaira Trucking LTD</p>
+			<p className="text-xs">&copy;{new Date().getFullYear()} LBanaira Trucking LTD</p>
 		</footer>
 	);
 };

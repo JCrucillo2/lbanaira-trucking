@@ -9,7 +9,7 @@ import mainLogo from "../assets/main-logo.webp";
 
 const Header = () => {
 	return (
-		<header>
+		<header className="px-4">
 			<nav className="md:flex md:items-center md:justify-between md:py-6">
 				<Link to="/" className="md:hidden">
 					<img src={mainLogo} alt="LBanaira Trucking LTD Logo" />
@@ -17,9 +17,9 @@ const Header = () => {
 
 				<div className="hidden md:flex md:items-center">
 					<img className="w-[7rem]" src={mainLogo} alt="LBanaira Trucking LTD Logo" />
-					<h1 className="font-oswald text-primary text-3xl font-bold">
+					<p className="font-oswald text-primary text-3xl font-bold">
 						<Link to="/">LBanaira Trucking LTD</Link>
-					</h1>
+					</p>
 				</div>
 
 				<div className="flex flex-row gap-5">
