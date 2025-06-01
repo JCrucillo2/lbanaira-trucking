@@ -9,7 +9,7 @@ import mainLogo from "../assets/main-logo.webp";
 
 const Header = () => {
 	return (
-		<header className="px-4">
+		<header className="container mx-auto px-4">
 			<nav className="md:flex md:items-center md:justify-between md:py-6">
 				<Link to="/" className="md:hidden">
 					<img src={mainLogo} alt="LBanaira Trucking LTD Logo" />

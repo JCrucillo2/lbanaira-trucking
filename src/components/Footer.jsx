@@ -10,7 +10,7 @@ const Footer = () => {
 			</h1>
 
 			<div className="flex flex-col gap-4 my-4">
-				{Links.map((link) => (
+							{Links.map((link) => (
 					<NavLink key={link.id} className="hover:underline" to={link.to}>
 						{link.name}
 					</NavLink>

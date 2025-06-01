@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 
 const RootLayout = () => {
 	return (
-		<div className="root-layout font-open-sans container mx-auto">
+		<div className="root-layout font-open-sans">
 			<Header />
 
 			<main className="min-h-svh">
