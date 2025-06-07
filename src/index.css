@@ -6,3 +6,9 @@
 	--font-open-sans: "Open Sans", sans-serif;
 	--color-primary: #162b6f;
 }
+
+@layer components {
+	.default-button {
+		@apply my-12 inline-block bg-white px-4 py-2 text-primary rounded hover:bg-[#cd3700] hover:text-white transition-all font-bold;
+	}
+}
