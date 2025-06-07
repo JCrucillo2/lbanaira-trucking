@@ -16,7 +16,7 @@ const RootLayout = () => {
 			<div className="root-layout font-open-sans">
 				<Header />
 
-				<AnimatePresence mode="wait" exitBeforeEnter>
+				<AnimatePresence exitBeforeEnter>
 					<main className="min-h-svh">
 						<Outlet location={location} key={location.pathname} />
 					</main>

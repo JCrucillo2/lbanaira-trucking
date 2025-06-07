@@ -1,3 +1,6 @@
+// hooks
+import { useState } from "react";
+
 // react router
 import { NavLink, Link } from "react-router-dom";
 
@@ -6,30 +9,48 @@ import Links from "./Links";
 
 // assets
 import mainLogo from "../assets/main-logo.webp";
+import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 
 const Header = () => {
+	const [nav, setNav] = useState(false);
+
+	const handleNav = () => {
+		setNav(!nav);
+	};
+
 	return (
 		<header className="container mx-auto px-4">
-			<nav className="md:flex md:items-center md:justify-between md:py-6">
-				<Link to="/" className="md:hidden">
-					<img src={mainLogo} alt="LBanaira Trucking LTD Logo" />
+			<div className="flex justify-between items-center h-24 container mx-auto">
+				<Link to="/" className="">
+					<img src={mainLogo} alt="LBanaira Trucking LTD Logo" width={150} />
 				</Link>
 
-				<div className="hidden md:flex md:items-center">
-					<img className="w-[7rem]" src={mainLogo} alt="LBanaira Trucking LTD Logo" />
-					<p className="font-oswald text-primary text-3xl font-bold">
-						<Link to="/">LBanaira Trucking LTD</Link>
-					</p>
-				</div>
-
-				<div className="flex flex-row gap-5">
+				<ul className="hidden md:flex">
 					{Links.map((link) => (
-						<NavLink key={link.id} className="text-primary hover:underline font-bold" to={link.to}>
+						<NavLink key={link.id} className="text-primary hover:underline font-bold p-4" to={link.to}>
 							{link.name}
 						</NavLink>
 					))}
+				</ul>
+
+				<div onClick={handleNav} className="block md:hidden">
+					{nav ? <AiOutlineClose size={35} /> : <AiOutlineMenu size={35} />}
 				</div>
-			</nav>
+
+				<ul className={nav ? "fixed md:hidden left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-primary ease-in-out duration-500" : "ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%]"}>
+					<Link to="/" className="">
+						<img src={mainLogo} alt="LBanaira Trucking LTD Logo" />
+					</Link>
+
+					<div className="flex flex-col text-center">
+						{Links.map((link) => (
+							<NavLink key={link.id} className="text-white hover:bg-[#cd3700] transition-colors font-bold p-4" to={link.to} onClick={handleNav}>
+								{link.name}
+							</NavLink>
+						))}
+					</div>
+				</ul>
+			</div>
 		</header>
 	);
 };
